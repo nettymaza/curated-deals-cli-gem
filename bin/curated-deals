@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+
+#loading main lib curated_deals
+
+require_relative '../lib/curated_deals'
+
+CuratedDeals::CLI.new.call

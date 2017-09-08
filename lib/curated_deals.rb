@@ -1,5 +1,2 @@
-require "curated_deals/version"
-
-module CuratedDeals
-  # Your code goes here...
-end
+require_relative "./curated_deals/version"
+require_relative "./curated_deals/cli"
