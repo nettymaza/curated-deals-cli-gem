@@ -31,6 +31,7 @@ class CuratedDeals::CLI
     #List most popular curated items
   end
 
+  #Notes
 
   #Items
   #Have a name
