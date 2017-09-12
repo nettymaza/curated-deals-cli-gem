@@ -20,10 +20,12 @@ class CuratedDeals::Category
   def self.get_categories
     categories_page = Scraper.new.get_page('https://canopy.co/shop/categories')
     categories_page.css(".CollectionGrid-tile").each do |category|
-      name = category.css(".CollectionGrid-tileName").text
-      products_list_url = category.attr('href')
+      name = category.css(".CollectionGrid-tileName").text.gsub(/\n/, '')
+      products_list_url = "https://canopy.co" + category.attr('href')
     end
   end
+
+  #make a category form category array
 
   #list_categories by index
 
