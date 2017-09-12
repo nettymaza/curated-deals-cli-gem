@@ -2,11 +2,12 @@ require 'pry'
 require 'nokogiri'
 require 'open-uri'
 
-class CuratedDeals::Scraper
+module CuratedDeals
+  class Scraper
 
-  def get_page(url_to_scrape)
-    Nokogiri::HTML(open(url_to_scrape))
+    def get_page(url_to_scrape)
+      Nokogiri::HTML(open(url_to_scrape))
+    end
+
   end
-
-
 end
