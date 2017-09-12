@@ -25,6 +25,7 @@ module CuratedDeals
         name = category.css(".CollectionGrid-tileName").text.gsub(/\n/, '')
         products_list_url = "https://canopy.co" + category.attr('href')
         self.new(name, products_list_url)
+        # binding.pry
       end
     end
 
@@ -44,7 +45,12 @@ module CuratedDeals
     def display_category
       puts @name
     end
-    # binding.pry
+
     #A category has many products
+    #fetch products by category?
+
+    def fetch_products_by_category
+    end
+
   end
 end
