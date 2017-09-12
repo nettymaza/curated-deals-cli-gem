@@ -19,6 +19,7 @@ module CuratedDeals
       puts "Which category of products would you like to see?"
       Category.get_categories
       Category.list_categories
+      puts "Please type number..."
       input = gets.strip
       category = Category.get_by_index(input.to_i - 1)
       category.display_category

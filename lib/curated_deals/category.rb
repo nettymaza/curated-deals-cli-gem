@@ -50,6 +50,8 @@ module CuratedDeals
     #fetch products by category?
 
     def fetch_products_by_category
+      products_page = Scraper.new.get_fully_loaded_page(@products_list_url)
+      binding.pry
     end
 
   end
