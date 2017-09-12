@@ -1,10 +1,9 @@
 #CLI controller
-module CuratedDeals
-  class CLI
+class CuratedDeals::CLI
 
     def call
       puts "Which category of products would you like to see?"
-    
+
     end
 
   end
