@@ -4,8 +4,8 @@ require 'open-uri'
 
 class CuratedDeals::Scraper
 
-  def get_page
-    Nokogiri::HTML(open('https://canopy.co/shop/categories'))
+  def get_page(url_to_scrape)
+    Nokogiri::HTML(open(url_to_scrape))
   end
 
 
