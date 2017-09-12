@@ -25,13 +25,12 @@ module CuratedDeals
         name = category.css(".CollectionGrid-tileName").text.gsub(/\n/, '')
         products_list_url = "https://canopy.co" + category.attr('href')
         self.new(name, products_list_url)
-        # binding.pry
       end
     end
 
-
+    #Display categories by index
     def self.list_categories
-      @@all[0..5].each_with_index do |category, index|
+      @@all[0..7].each_with_index do |category, index|
         puts "#{index + 1}. #{category.name}"
         # binding.pry
       end
@@ -41,8 +40,11 @@ module CuratedDeals
       @@all[index]
     end
 
-    #display category name
-
+    #Display chosen category
+    def display_category
+      puts @name
+    end
+    # binding.pry
     #A category has many products
   end
 end

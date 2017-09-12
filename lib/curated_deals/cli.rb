@@ -6,8 +6,6 @@ module CuratedDeals
       greet
       start
 
-
-      # list_categorie
       # list_items from chosen categories
       # goodbye
     end
@@ -22,7 +20,8 @@ module CuratedDeals
       Category.get_categories
       Category.list_categories
       input = gets.strip
-
+      category = Category.get_by_index(input.to_i - 1)
+      category.display_category
     end
 
 
