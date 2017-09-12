@@ -5,7 +5,7 @@ module CuratedDeals
     def call
       puts "Which category of products would you like to see?"
       Category.get_categories
-      Category.display_categories
+      Category.list_categories
       # greet
       # intro
       # list_categories
