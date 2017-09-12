@@ -6,11 +6,11 @@ require "curated_deals/version"
 Gem::Specification.new do |spec|
   spec.name          = "curated_deals"
   spec.version       = CuratedDeals::VERSION
-  spec.authors       = ["TODO: Write your name"]
-  spec.email         = ["TODO: Write your email address"]
+  spec.authors       = ["Annette Maza"]
+  spec.email         = ["nettymaza@gmail.com"]
 
-  spec.summary       = %q{TODO: Write a short summary, because Rubygems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
+  spec.summary       = %q{It shows daily curated deals.}
+  # spec.description   = %q{Write a longer description or delete this line.}
   spec.homepage      = "TODO: Put your gem's website or public repo URL here."
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
@@ -31,4 +31,9 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 1.15"
   spec.add_development_dependency "rake", "~> 10.0"
+  spec.add_development_dependency "pry"
+
+  spec.add_dependency "nokogiri"
+  spec.add_dependency "watir"
+
 end
