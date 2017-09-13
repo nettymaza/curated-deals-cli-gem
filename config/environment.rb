@@ -1,7 +1,8 @@
-
+require 'awesome_print'
 require 'pry'
 require 'nokogiri'
 require 'open-uri'
+require 'launchy'
 
 require_relative '../lib/curated_deals/version'
 require_relative '../lib/curated_deals/cli'
