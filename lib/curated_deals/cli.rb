@@ -1,13 +1,9 @@
 #CLI controller
 module CuratedDeals
   class CLI
-
     def call
       greeting
       start
-      # list_items from chosen categories
-      # list products
-      # goodbye
     end
 
     def greeting
@@ -16,18 +12,24 @@ module CuratedDeals
     end
 
     def start
-      puts "Which category of products would you like to see?"
       Category.get_categories
       Category.list_categories
-      puts "Please type number..."
-      input = gets.strip
-      category = Category.get_by_index(input.to_i - 1)
-      category.display_category
+      choose_category
     end
 
+    def choose_category
+      puts "Which category of products would you like to see? Type a number..."
+      input = gets.strip
+      @category = Category.get_by_index(input.to_i - 1)
+      @category.display_category
+      choose_product
+    end
 
-
-
-
+    def choose_product
+      puts "Which product would you like to buy on amazon?"
+      @category.list_products
+      input = gets.strip
+      @category.products[input.to_i - 1].buy_on_amazon
+    end
   end
 end

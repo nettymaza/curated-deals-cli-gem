@@ -1,14 +1,18 @@
+require 'launchy'
+
 module CuratedDeals
   class Product
-    attr_accessor :name, :category
+    attr_accessor :name, :price, :category
 
-    def initialize(name, category = nil)
+    def initialize(name, price, category, amazon_url)
       @name = name
-      self.category = category if category
+      @category = category
+      @price = price
+      @amazon_url = amazon_url
     end
-    #fetch products
-    #products belong to a category
-    #generate products by category
-    #display products by category
+
+    def buy_on_amazon
+      Launchy.open(@amazon_url)
+    end
   end
 end

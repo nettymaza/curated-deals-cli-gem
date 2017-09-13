@@ -31,7 +31,7 @@ module CuratedDeals
 
     #Display categories by index
     def self.list_categories
-      @@all[0..7].each_with_index do |category, index|
+      @@all[0..9].each_with_index do |category, index|
         puts "#{index + 1}. #{category.name}"
         # binding.pry
       end
@@ -44,15 +44,29 @@ module CuratedDeals
     #Display chosen category
     def display_category
       puts @name
+      fetch_products
     end
 
     #A category has many products
     #fetch products by category?
 
-    def fetch_products_by_category
-      products_page = Scraper.new.get_fully_loaded_page(@products_list_url)
-      binding.pry
+    def fetch_products
+      ap "Fetching products from #{@products_list_url}"
+      @products.clear
+      products = Scraper.new.get_products(@products_list_url)
+      products.css(".product-card").each do |product|
+        product_name = product.css(".product-details-name span").text
+        product_price = product.css(".buy-button-container span").text
+        amazon_url = product.css(".buy-button-container a").attr('href').value
+        product = Product.new(product_name, product_price, self, amazon_url)
+        @products << product
+      end
     end
 
+    def list_products
+      @products.each_with_index do |product, index|
+        puts "#{index + 1}. #{product.name}"
+      end
+    end
   end
 end
