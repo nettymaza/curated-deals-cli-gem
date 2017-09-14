@@ -26,10 +26,21 @@ module CuratedDeals
     end
 
     def choose_product
-      puts "Which product would you like to buy on amazon?"
+      puts "Which product would you like to buy on Amazon? Type a number..."
       @category.list_products
+      puts "Not sure? Type start to view categories again! "
+      puts "Not interested? To quit, type exit"
       input = gets.strip
-      @category.products[input.to_i - 1].buy_on_amazon
+
+      case input
+      when "start"
+        start
+      when "exit"
+        puts 'Goodbye!'
+      else
+        @category.products[input.to_i - 1].buy_on_amazon
+      end
+
     end
   end
 end

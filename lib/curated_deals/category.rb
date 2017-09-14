@@ -43,15 +43,16 @@ module CuratedDeals
 
     #Display chosen category
     def display_category
-      puts @name
+      puts "#{name} is a great choise!"
       fetch_products
     end
 
     #A category has many products
-    #fetch products by category?
+    #fetch products by category
+    #list products
 
     def fetch_products
-      ap "Fetching products from #{@products_list_url}"
+      puts "Fetching products from #{@products_list_url}"
       @products.clear
       products = Scraper.new.get_products(@products_list_url)
       products.css(".product-card").each do |product|
