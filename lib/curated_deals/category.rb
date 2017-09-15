@@ -43,7 +43,7 @@ module CuratedDeals
 
     #Display chosen category
     def display_category
-      puts "#{name} is a great choise!"
+      puts "#{name} is a great choice!"
       fetch_products
     end
 
@@ -65,7 +65,7 @@ module CuratedDeals
     end
 
     def list_products
-      @products.each_with_index do |product, index|
+      @products[0..9].each_with_index do |product, index|
         puts "#{index + 1}. #{product.name}"
       end
     end
