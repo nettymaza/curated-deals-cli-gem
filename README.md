@@ -38,4 +38,5 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 The gem is available as open source under the terms of the <a href="https://opensource.org/licenses/MIT">MIT License</a>
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/nettymaza/curated_deals.
+
 This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the <a href="https://www.contributor-covenant.org/">Contributor Covenant</a> code of conduct.
