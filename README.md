@@ -1,12 +1,12 @@
 # CuratedDeals
-This Ruby Gem includes a CLI that provides the user with a list of product categories; users can then select from this list to view specific items available for purchase on Amazon.com
+This Ruby Gem includes a CLI that provides the user with a list of product categories; users can then select from this list to view specific items available for purchase on Amazon's website.
 
 ## Installation
 Please make sure to install homebrew, follow instructions from this link https://docs.brew.sh/Installation.html
 
-Then install Google Chrome: chromedriver
+Then install chromedriver
 
-    $ brew install chromedriver
+`brew install chromedriver`
 
 To install gem:
 
@@ -17,15 +17,15 @@ gem 'curated_deals'
 ```
 And then execute:
 
-    $ bundle
+`bundle`
 
 Or install it yourself as:
 
-    $ gem install curated_deals
+`gem install curated_deals`
 
 ## Usage
 
-To use, run ./bin/curated_deals on your command line. Choose the category of products you would like to see by typing their corresponding number. This will display a list of items from which you can also choose by typing their assigned number. After you make your choice, an Amazon.com window will launch displaying your selected item. Products you can actually buy!!
+To use, run ./bin/curated_deals on your command line. Choose the category of products you would like to see by typing their corresponding number. This will display a list of items from which you can also choose from by typing their assigned number. After you make your choice, an Amazon.com window will launch displaying your selected item. Products you can actually buy!!
 
 ## Development
 
@@ -35,4 +35,4 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/nettymaza/curated_deals. 
+Bug reports and pull requests are welcome on GitHub at https://github.com/nettymaza/curated_deals.
