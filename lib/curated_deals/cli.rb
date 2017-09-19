@@ -1,6 +1,7 @@
 #CLI controller
-module CuratedDeals
-  class CLI
+require 'pry'
+
+  class CuratedDeals::CLI
     def call
       greeting
       start
@@ -12,15 +13,15 @@ module CuratedDeals
     end
 
     def start
-      Category.get_categories
-      Category.list_categories
+      CuratedDeals::Scraper.new.get_categories
+      CuratedDeals::Category.list_categories
       choose_category
     end
 
     def get_input
       input = gets.strip
 
-      if (1..10).to_a.include?(input.to_i)
+      if input.to_i.between?(1, 10)
         return input.to_i
       elsif ['start', 'exit'].include?(input)
         case input
@@ -39,9 +40,9 @@ module CuratedDeals
     def choose_category
       puts "Which category of products would you like to see? Type a number..."
       input = get_input
-      @category = Category.get_by_index(input.to_i - 1)
+      @category = CuratedDeals::Category.get_by_index(input.to_i - 1)
       @category.display_category
-
+      binding.pry
       choose_product
     end
 
@@ -55,4 +56,3 @@ module CuratedDeals
       @category.products[input.to_i - 1].buy_on_amazon
     end
   end
-end
